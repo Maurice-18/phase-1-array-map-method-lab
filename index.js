@@ -12,5 +12,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const exceptions = ["API", "OO", "NaN", "JSONP", "HTML", "CSS", "SQL", "HTTP", "URL", "DOM"];
+  return tutorials.map((tutorial) => {
+    return tutorial
+    .split(" ")
+    .map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(" ");
+  });
 }
